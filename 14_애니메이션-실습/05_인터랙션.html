@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+      left: 50%;
+      margin-left: -50px;
+      background-color: red;
+    }
+  </style>
+  <style>
+    /*애니메이션 제작
+    (1)키프레임 생성
+    @keyframes 애니메이션 이름 {
+      전체 진행시간에 대한 비율{변경내용}
+    }*/
+    @keyframes change {
+      0% {background-color: red;}
+      12.5% {
+        background-color: orange;
+        width: 200px;
+      }
+      25% { 
+        background-color:  yellow;
+        width: 200px;
+        height: 200px;
+      }
+      37.5% { 
+        background-color: green;
+        width: 200px;
+        height: 300px;
+      }
+      50% {
+        background-color: blue;
+        width: 100px;
+        height: 300px;
+      }
+      62.5% {
+        background-color: navy;
+        width: 100px;
+        height: 200px;
+      }
+      75% {
+        background-color: indigo;
+        width: 100px;
+        height: 300px;
+      }
+      100% {
+        background-color: red;
+      }
+    }
+    /* (2) 애니메이션 생성과 적용 */
+    .box {
+      animation : change 6s;
+      animation-delay: 1s;  /* 대기시간 */
+      animation-iteration-count: infinite;
+      animation-direction: alternate; 
+      /* 진행했다가 되돌아오는 느낌 */
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
